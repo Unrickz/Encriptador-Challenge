@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Encriptador</title>
+    
+</head>
+<body>
+
+    <main>
+
+        <div class="cajaprincipal">
+
+                 <div class="contenedorizquierdo">
+
+                    <div class="contenedor-entradadetexto">
+                <textarea name="text" id="textoPorEncriptar" placeholder="Ingrese el texto aquí" cols="70" rows="20" autofocus></textarea>
+                
+                </div>
+                 <div class="contenedorbotones">
+                    <div class="botoncitos">
+
+                   <p class="avisoencriptar"> &#9055; solo letras mayusculas y sin acentos</p>
+
+                        <button type="button" id="botonEncriptar">Encriptar!</button>
+                     <button type="button" id="botonDesencriptar">Desencriptar!</button>
+                    </div>
+                 </div>
+            </div>
+
+            <div  class="contenedorderecho">
+
+                   <div class="contenedor-salidadetexto">
+                        <textarea name="resulteishon" id="textoDesencriptado" cols="26" rows="23"></textarea>
+                    <div id="esconder">
+                        <img id="imagentext" class="imagen-encriptador" src="Images/encriptadorImagen.jpeg" alt="imagentext">
+
+                        <div  id="letras1" class="letras">
+                        <p class="decriptertext" style="display: block;">Ningun mensaje fue encontrado.<br><p class="decriptertextlower">
+                        Por favor ingrese el texto que desea encriptar o desencriptar.</p>
+                
+                        </p>
+                    </div>
+                    </div>
+
+                        <button type="button"  id="botonCopiar">Copiar</button>
+              </div>     
+            </div>
+        </div>
+
+    
+   
+    
+
+</main>
+
+<div id="alerta-flotante">
+   <p class="alerta-flotante">¡Mensaje encriptado a sido copiado con exito!</p>
+</div>
+
+
+
+</body>
+<script>
+    var btnEnc = document.querySelector("#botonEncriptar");
+    btnEnc.onclick = encriptar;
+
+    var btnDesenc = document.querySelector("#botonDesencriptar");
+    btnDesenc.onclick = desEncriptar;
+
+    var btnCopy = document.querySelector("#botonCopiar");
+    btnCopy.onclick = copiar;
+</script>
+</html>
