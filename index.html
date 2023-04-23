@@ -12,7 +12,7 @@
 <body>
 
     <main>
-
+        
         <div class="cajaprincipal">
 
                  <div class="contenedorizquierdo">
@@ -50,6 +50,8 @@
                         <button type="button"  id="botonCopiar">Copiar</button>
               </div>     
             </div>
+            <p class="footer" style="text-align: center; font-size: 12px; font-weight: bold;" >Credo por Ricardo Henriquez<br>para el challenge de Alura.</p>
+
         </div>
 
     
@@ -60,14 +62,14 @@
 
 <div id="alerta-flotante">
    <p class="alerta-flotante">¡Mensaje encriptado a sido copiado con exito!</p>
+   <p id="message-error">Por favor no utilizar tildes ni caracteres especiales.</p>
 </div>
-
 
 
 </body>
 <script>
     var btnEnc = document.querySelector("#botonEncriptar");
-    btnEnc.onclick = encriptar;
+    btnEnc.onclick = validarTexto;
 
     var btnDesenc = document.querySelector("#botonDesencriptar");
     btnDesenc.onclick = desEncriptar;
