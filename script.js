@@ -1,8 +1,34 @@
 
+
+/*cancelar click derecho*/
+function disableIE() {
+  if (document.all) {
+      return false;
+  }
+}
+function disableNS(e) {
+  if (document.layers || (document.getElementById && !document.all)) {
+      if (e.which==2 || e.which==3) {
+          return false;
+      }
+  }
+}
+if (document.layers) {
+  document.captureEvents(Event.MOUSEDOWN);
+  document.onmousedown = disableNS;
+} 
+else {
+  document.onmouseup = disableNS;
+  document.oncontextmenu = disableIE;
+}
+document.oncontextmenu=new Function("return false");
+
+
 /*area de encriptado*/
+
 function validarTexto() {
   let texto = document.getElementById("textoPorEncriptar").value;
-  let regex = /^[A-Za-z\s]+$/; // solo letras mayusculas y minusculas
+  let regex = /^[A-Za-z\s]+$/; 
   if (regex.test(texto)) {
     encriptar();
   } else {
@@ -10,7 +36,6 @@ function validarTexto() {
   }
 }
 
-/*nopos*/
 
 function encriptar () {
   var frase = document.getElementById("textoPorEncriptar").value.toLowerCase();
@@ -67,6 +92,4 @@ function desEncriptar () {
       divAlerta.style.display = 'none';
     }, 2000);
   }
-
-
   
