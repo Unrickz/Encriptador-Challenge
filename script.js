@@ -23,6 +23,18 @@ document.oncontextmenu=new Function("return false");
 
 
 /*area de encriptado*/
+
+function validarTexto() {
+  let texto = document.getElementById("textoPorEncriptar").value;
+  let regex = /^[A-Za-z\s]+$/; 
+  if (regex.test(texto)) {
+    encriptar();
+  } else {
+    alert("Por favor no utilice caracteres especiales ni acentos");
+  }
+}
+
+
 function encriptar () {
   var frase = document.getElementById("textoPorEncriptar").value.toLowerCase();
   
