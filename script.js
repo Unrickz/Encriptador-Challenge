@@ -27,21 +27,25 @@ document.oncontextmenu=new Function("return false");
 /*area de encriptado*/
 
 function validarTexto() {
-  let texto = document.getElementById("textoPorEncriptar").value;
-  let regex = /^[A-Za-z\s]+$/; 
-  if (regex.test(texto)) {
-    encriptar();
-  } else {
-    alert("Por favor no utilice caracteres especiales ni acentos");
+  let texto = document.getElementById("textoPorEncriptar").value.trim();
+  if (texto.length === 0) {
+    alert("No se a ingresado nada en el campo de texto, por favor escribe el texto a encriptar");
+  }
+  else {
+    let regex = /^[A-Za-z\s]+$/; 
+    if (regex.test(texto)) {
+      encriptar();
+    }
+    else {
+      alert("Por favor no utilice caracteres especiales ni acentos");
+    }
   }
 }
 
 
 function encriptar () {
-  var frase = document.getElementById("textoPorEncriptar").value.toLowerCase();
-  
- 
-  var textoPorEncriptar = frase.replace(/e/img, "enter");
+    var frase = document.getElementById("textoPorEncriptar").value.toLowerCase();
+    var textoPorEncriptar = frase.replace(/e/img, "enter");
     var textoPorEncriptar = textoPorEncriptar.replace(/o/img, "ober");
     var textoPorEncriptar = textoPorEncriptar.replace(/i/img, "imes");
     var textoPorEncriptar = textoPorEncriptar.replace(/a/img, "ai");
@@ -50,7 +54,8 @@ function encriptar () {
     document.getElementById("textoDesencriptado").innerHTML = textoPorEncriptar;
 
     
-         document.getElementById("esconder").style.display = "none"
+         document.getElementById("esconder").style.display = "none" 
+            
    
           
   
