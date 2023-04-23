@@ -42,6 +42,22 @@ function validarTexto() {
   }
 }
 
+function validarTextoDes() {
+  let texto = document.getElementById("textoPorEncriptar").value.trim();
+  if (texto.length === 0) {
+    alert("No se a ingresado nada en el campo de texto, por favor escribe el texto a encriptar");
+  }
+  else {
+    let regex = /^[A-Za-z\s]+$/; 
+    if (regex.test(texto)) {
+      desEncriptar();
+    }
+    else {
+      alert("Por favor no utilice caracteres especiales ni acentos");
+    }
+  }
+}
+
 
 function encriptar () {
     var frase = document.getElementById("textoPorEncriptar").value.toLowerCase();
