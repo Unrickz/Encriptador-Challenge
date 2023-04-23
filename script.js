@@ -45,7 +45,7 @@ function validarTexto() {
 function validarTextoDes() {
   let texto = document.getElementById("textoPorEncriptar").value.trim();
   if (texto.length === 0) {
-    alert("No se a ingresado nada en el campo de texto, por favor escribe el texto a encriptar");
+    alert("No se a ingresado nada en el campo de texto, por favor escribe el texto a desencriptar");
   }
   else {
     let regex = /^[A-Za-z\s]+$/; 
