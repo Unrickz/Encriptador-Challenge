@@ -112,5 +112,8 @@ function desEncriptar () {
     setTimeout(function() {
       divAlerta.style.display = 'none';
     }, 2000);
+
+    document.getElementById("textoPorEncriptar").value = "";
+    textoPorEncriptar.focus();
   }
   
